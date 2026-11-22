@@ -68,7 +68,7 @@ Este projeto possui finalidade acadêmica e demonstrativa. Os dados são armazen
 
 ## 👩‍💻 Autoria
 
-Projeto desenvolvido como atividade acadêmica na área de desenvolvimento web.
+Projeto desenvolvido como atividade acadêmica na área de desenvolvimento front-end.
 
 ---
 
