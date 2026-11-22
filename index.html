@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raízes do Nordeste - Sabores e tradições nordestinas.">
+    <title>Raízes do Nordeste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="topo">
+
+        <div class="marca">
+
+            <img
+                src="imgs/logo-raizes.jpg"
+                alt="Logo Raízes do Nordeste"
+                class="logo"
+            >
+
+            <div>
+                <h1>Raízes do Nordeste</h1>
+                <small>O sabor da nossa terra!</small>
+            </div>
+
+        </div>
+
+        <button id="btnLogin" class="btn-login">
+            Entrar
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- LOGIN E CADASTRO -->
+        <section id="telaAuth" class="tela">
+
+            <div class="painel-auth">
+
+                <h2>Bem-vindo à nossa casa!</h2>
+
+                <p>
+                    Entre ou cadastre-se para fazer seu pedido.
+                </p>
+
+                <div class="abas">
+
+                    <button id="abaLogin" class="aba ativa">
+                        Entrar
+                    </button>
+
+                    <button id="abaCadastro" class="aba">
+                        Cadastrar
+                    </button>
+
+                </div>
+
+                <form id="formAuth">
+
+                    <input
+                        id="nome"
+                        type="text"
+                        placeholder="Nome completo"
+                        hidden
+                    >
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Seu e-mail"
+                        required
+                    >
+
+                    <input
+                        id="telefone"
+                        type="tel"
+                        placeholder="Telefone"
+                        hidden
+                    >
+
+                    <input
+                        id="senha"
+                        type="password"
+                        placeholder="Sua senha"
+                        required
+                        minlength="4"
+                    >
+
+                    <button
+                        type="submit"
+                        class="btn-principal"
+                        id="btnAuth"
+                    >
+                        Entrar
+                    </button>
+
+                </form>
+
+                <button id="fecharAuth" class="btn-texto">
+                    Continuar sem entrar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA PRINCIPAL -->
+        <section id="telaPrincipal" class="tela visivel">
+
+            <section class="boas-vindas" id="inicio">
+
+                <div class="conteudo-boas-vindas">
+
+                    <span>🌵 SEJA BEM-VINDO!</span>
+
+                    <h2>
+                        O verdadeiro sabor do Nordeste
+                        <br>
+                        pertinho de você!
+                    </h2>
+
+                    <p>
+                        Comida boa, tradição e carinho em cada receita.
+                        Venha experimentar os sabores que fazem parte
+                        da nossa história!
+                    </p>
+
+                    <button
+                        class="btn-principal"
+                        onclick="document.getElementById('cardapio').scrollIntoView({behavior:'smooth'})"
+                    >
+                        Conheça nosso cardápio
+                    </button>
+
+                </div>
+
+                <div class="imagem-destaque">
+
+                    <img
+                        src="imgs/cuscuz.jpg"
+                        alt="Delicioso cuscuz nordestino"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- CARROSSEL DE COMIDAS -->
+            <section class="secao-carrossel">
+
+                <h2>❤️ Sabores que contam histórias</h2>
+
+                <p>
+                    Conheça nossas delícias nordestinas!
+                </p>
+
+                <div class="carrossel">
+
+                    <img
+                        id="imagem-carrossel"
+                        src="imgs/tapioca.jpg"
+                        alt="Tapioca tradicional nordestina"
+                    >
+
+                    <div class="texto-carrossel">
+
+                        <h3 id="titulo-carrossel">
+                            Tapioca tradicional
+                        </h3>
+
+                        <p id="descricao-carrossel">
+                            Uma delícia preparada com carinho!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ESCOLHA DA UNIDADE -->
+            <section class="secao">
+
+                <h2>📍 Escolha sua unidade</h2>
+
+                <select id="unidade">
+
+                    <option value="recife">
+                        Recife - Espinheiro
+                    </option>
+
+                    <option value="olinda">
+                        Olinda - Centro
+                    </option>
+
+                    <option value="joao-pessoa">
+                        João Pessoa - Centro
+                    </option>
+
+                </select>
+
+                <p id="horarioUnidade" class="informacao"></p>
+
+            </section>
+
+
+            <!-- PROGRAMA DE FIDELIDADE -->
+            <section class="cartao-fidelidade">
+
+                <div>
+
+                    <span>PROGRAMA DE FIDELIDADE</span>
+
+                    <h2>
+                        Suas compras valem pontos!
+                    </h2>
+
+                    <p>
+                        Acumule pontos e aproveite benefícios.
+                    </p>
+
+                    <strong>
+                        <span id="pontos">0</span> pontos
+                    </strong>
+
+                </div>
+
+                <span class="estrela">⭐</span>
+
+            </section>
+
+
+            <!-- PROMOÇÕES -->
+            <section class="secao">
+
+                <h2>🔥 Ofertas especiais</h2>
+
+                <div
+                    id="promocoes"
+                    class="lista-promocoes"
+                ></div>
+
+            </section>
+
+
+            <!-- CARDÁPIO -->
+            <section class="secao">
+
+                <div class="titulo-secao">
+
+                    <h2>Nosso cardápio</h2>
+
+                    <span>Feito com tradição ❤️</span>
+
+                </div>
+
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="🔎 Buscar um produto..."
+                >
+
+                <!-- CATEGORIAS -->
+                <div id="categorias" class="categorias">
+
+                    <button
+                        class="categoria ativa"
+                        data-categoria="Todos"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        class="categoria"
+                        data-categoria="Tapiocas"
+                    >
+                        Tapiocas
+                    </button>
+
+                    <button
+                        class="categoria"
+                        data-categoria="Cuscuz"
+                    >
+                        Cuscuz
+                    </button>
+
+                    <button
+                        class="categoria"
+                        data-categoria="Bolos"
+                    >
+                        Bolos
+                    </button>
+
+                    <button
+                        class="categoria"
+                        data-categoria="Bebidas"
+                    >
+                        Bebidas
+                    </button>
+
+                    <button
+                        class="categoria"
+                        data-categoria="Cafés"
+                    >
+                        Cafés
+                    </button>
+
+                </div>
+
+                <div
+                    id="cardapio"
+                    class="grade-produtos"
+                ></div>
+
+            </section>
+
+
+            <!-- CARRINHO -->
+            <section
+                class="secao"
+                id="secaoCarrinho"
+            >
+
+                <h2>🛒 Meu carrinho</h2>
+
+                <div id="carrinho"></div>
+
+                <div class="total">
+
+                    <span>Total:</span>
+
+                    <strong id="total">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+                <button
+                    id="btnFinalizar"
+                    class="btn-principal"
+                >
+                    Finalizar pedido
+                </button>
+
+            </section>
+
+
+            <!-- MEUS PEDIDOS -->
+            <section
+                class="secao"
+                id="secaoPedidos"
+            >
+
+                <h2>📦 Meus pedidos</h2>
+
+                <div id="meusPedidos">
+
+                    <p class="vazio">
+                        Você ainda não possui pedidos.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRIVACIDADE -->
+            <section class="secao privacidade">
+
+                <h2>🔒 Privacidade e proteção de dados</h2>
+
+                <p>
+                    Você tem controle sobre como seus dados são utilizados.
+                </p>
+
+                <button
+                    id="btnPrivacidade"
+                    class="btn-secundario"
+                >
+                    Gerenciar meus dados
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- TELA DE CHECKOUT -->
+        <section id="telaCheckout" class="tela">
+
+            <button
+                class="btn-voltar"
+                data-voltar="principal"
+            >
+                ← Voltar
+            </button>
+
+            <h2>Finalizar pedido</h2>
+
+            <div id="resumoCheckout"></div>
+
+            <label for="pagamento">
+                Forma de pagamento
+            </label>
+
+            <select id="pagamento">
+
+                <option value="Pix">
+                    Pix
+                </option>
+
+                <option value="Cartão">
+                    Cartão
+                </option>
+
+                <option value="Dinheiro">
+                    Dinheiro na retirada
+                </option>
+
+            </select>
+
+            <div class="aviso">
+
+                O pagamento será realizado no local.
+
+            </div>
+
+            <button
+                id="confirmarPedido"
+                class="btn-principal"
+            >
+                Confirmar pedido
+            </button>
+
+        </section>
+
+
+        <!-- TELA DE PRIVACIDADE E LGPD -->
+        <section id="telaPrivacidade" class="tela">
+
+            <button
+                class="btn-voltar"
+                data-voltar="principal"
+            >
+                ← Voltar
+            </button>
+
+            <h2>🔐 Minha privacidade</h2>
+
+            <p>
+                Respeitamos sua privacidade e protegemos seus dados pessoais.
+            </p>
+
+
+            <!-- DADOS DO USUÁRIO -->
+            <div class="bloco-privacidade">
+
+                <h3>Dados da conta</h3>
+
+                <div id="dadosUsuario"></div>
+
+            </div>
+
+
+            <!-- CONSENTIMENTOS -->
+            <div class="bloco-privacidade">
+
+                <h3>Consentimentos</h3>
+
+                <p>
+                    Escolha como deseja que seus dados sejam utilizados.
+                </p>
+
+                <label class="opcao-lgpd">
+
+                    <input
+                        type="checkbox"
+                        id="consentimentoMarketing"
+                    >
+
+                    Aceito receber promoções e campanhas de marketing.
+
+                </label>
+
+                <label class="opcao-lgpd">
+
+                    <input
+                        type="checkbox"
+                        id="consentimentoPerfil"
+                    >
+
+                    Aceito o uso dos meus dados para personalização de ofertas.
+
+                </label>
+
+                <button
+                    id="salvarConsentimentos"
+                    class="btn-principal"
+                >
+                    Salvar minhas escolhas
+                </button>
+
+            </div>
+
+
+            <!-- DIREITOS DO TITULAR -->
+            <div class="bloco-privacidade">
+
+                <h3>Seus direitos</h3>
+
+                <p>
+                    Você pode solicitar:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Consulta dos seus dados pessoais.
+                    </li>
+
+                    <li>
+                        Correção de informações incorretas.
+                    </li>
+
+                    <li>
+                        Revogação dos consentimentos.
+                    </li>
+
+                    <li>
+                        Exclusão dos dados, quando legalmente possível.
+                    </li>
+
+                </ul>
+
+                <button
+                    id="solicitarDados"
+                    class="btn-secundario"
+                >
+                    Consultar meus dados
+                </button>
+
+                <button
+                    id="excluirDados"
+                    class="btn-perigo"
+                >
+                    Solicitar exclusão da minha conta
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- NAVEGAÇÃO INFERIOR -->
+    <nav class="navegacao">
+
+        <button data-atalho="inicio">
+            🏠
+            <span>Início</span>
+        </button>
+
+        <button data-atalho="cardapio">
+            🍽️
+            <span>Cardápio</span>
+        </button>
+
+        <button data-atalho="carrinho">
+            🛒
+            <span>Carrinho</span>
+        </button>
+
+        <button data-atalho="pedidos">
+            📦
+            <span>Pedidos</span>
+        </button>
+
+        <button data-atalho="privacidade">
+            🔒
+            <span>Privacidade</span>
+        </button>
+
+    </nav>
+
+
+    <!-- AVISO INICIAL DA LGPD -->
+    <div
+        id="avisoLGPD"
+        class="modal-fundo"
+    >
+
+        <div class="modal">
+
+            <h2>🔒 Sua privacidade importa!</h2>
+
+            <p>
+                Utilizamos dados necessários para cadastro e realização
+                dos pedidos. Com sua autorização, também podemos utilizar
+                seus dados para enviar promoções e personalizar ofertas.
+            </p>
+
+            <p>
+                Você pode consultar e alterar suas escolhas a qualquer
+                momento na área de privacidade.
+            </p>
+
+            <label class="opcao-lgpd">
+
+                <input
+                    type="checkbox"
+                    id="aceiteMarketingInicial"
+                >
+
+                Quero receber promoções e novidades.
+
+            </label>
+
+            <button
+                id="aceitarLGPD"
+                class="btn-principal"
+            >
+                Salvar minhas preferências
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MENSAGENS DO SISTEMA -->
+    <div
+        id="mensagem"
+        class="mensagem"
+    ></div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>🌵 Raízes do Nordeste</p>
+
+        <small>
+            Tradição que alimenta nossa história.
+        </small>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
