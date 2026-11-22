@@ -29,7 +29,6 @@ O projeto foi desenvolvido com o objetivo de praticar conceitos de desenvolvimen
 - HTML5
 - CSS3
 - JavaScript
-- LocalStorage
 
 ## 📂 Estrutura do projeto
 
