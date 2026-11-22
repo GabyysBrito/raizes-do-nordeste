@@ -52,11 +52,7 @@ Raizes-do-Nordeste/
 
 ## 🚀 Como executar o projeto
 
-1. Faça o download ou clone este repositório.
-2. Abra a pasta do projeto no Visual Studio Code.
-3. Verifique se a pasta `imgs` contém as imagens utilizadas.
-4. Abra o arquivo `index.html` no navegador.
-5. Se preferir, utilize a extensão Live Server para executar o projeto.
+Acesse aqui https://raizes-do-nordeste-orpin-iota.vercel.app/
 
 ## 📱 Responsividade
 
